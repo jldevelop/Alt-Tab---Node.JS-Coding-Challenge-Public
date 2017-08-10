@@ -16,10 +16,13 @@
 
     vm.onSubmit = function () {
       console.log('Submitting registration');
+      console.log(vm.credentials);
       authentication
         .register(vm.credentials)
         .error(function(err){
           alert(err);
+          console.log("ERROR U CONTROLLERU....");
+          console.log(err);
         })
         .then(function(){
           $location.path('profile');

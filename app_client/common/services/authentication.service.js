@@ -45,6 +45,8 @@
 
     register = function(user) {
       return $http.post('/api/register', user).success(function(data){
+        console.log("DATA U REGISTERU:");
+        console.log(data);
         saveToken(data.token);
       });
     };
