@@ -5,19 +5,16 @@ var router = express.Router();
 var path = require('path');
 var jwt = require('jsonwebtoken');
 
-
 router.get('/', function (req, res) {
     //res.render('index', { user : req.user });
     res.sendFile('index.html',{root: path.join(__dirname, '../app_client')} );
 });
-
 
 router.post('/register', function(req, res) {
     //res.render('register', { });
     // res.sendFile('register.view.html',{root: path.join(__dirname, '../app_client/auth/register')} );
 
 });
-
 
 router.get('/register', function(req, res) {
     //res.render('register', { });
@@ -68,12 +65,9 @@ router.post('/api/login', passport.authenticate('local'), function(req, res) {
     res.render('profile.view.html', req.body);
 });
 
-
 router.get('/api/profile', function(req, res) {
     res.render('profile.view.html', req.body);
 });
-
-
 
 router.get('/logout', function(req, res) {
     req.logout();

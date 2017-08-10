@@ -93,33 +93,6 @@ mongoose.connect('mongodb://localhost/local' , { useMongoClient: true });
 // });
 
 
-app.get('/login', function(req, res){
-    res.sendFile('login.view.html',{root: path.join(__dirname, './app_client/auth/login')} );
-});
-
-app.get('/register', function(req, res){
-    res.sendFile('register.view.html',{root: path.join(__dirname, './app_client/auth/register')} );
-});
-
-app.get('/', function(req, res){
-    res.sendFile('index.html',{root: path.join(__dirname, './app_client')} );
-});
-
-/*
-app.post('/api/register', function(req, res){
-    console.log("GOT REGISTER REQUEST!!");
-});
-
-app.post('/api/login', function(req, res){
-    console.log("GOT LOGIN REQUEST!!");
-});
-
-app.get('api/signout', function(req, res) {
-    req.t();
-    res.redirect('/');
-});
-*/
-
 app.listen(3000);
 
 module.exports = app;
